@@ -1,0 +1,8 @@
+spring:  
+  application:
+    name: client-service
+  cloud:
+    config:
+      uri: http://localhost:8889
+#     token: client
+      token: s.qQrDUV79oFnKQZ642ow5vVt2

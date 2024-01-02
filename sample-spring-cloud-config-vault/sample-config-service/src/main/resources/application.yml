@@ -1,0 +1,14 @@
+server:  
+  port: ${PORT:8889}
+    
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        vault:
+          host: localhost
+          port: 8200
+   
+       
