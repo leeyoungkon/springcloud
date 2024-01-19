@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+  labels:
+    app: product-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+      - name: product-service
+        image: yklee2002/product-service
+        env:
+        - name: EUREKA_DEFAULT_ZONE
+          value: http://210.90.24.172:30006/eureka
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28093         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service
+  labels:
+    app: product-service  
+spec:
+  ports:
+  - nodePort: 30003
+    port: 28093
+    protocol: TCP
+    targetPort: 28093
+  selector:
+    app: product-service
+  type: NodePort
+

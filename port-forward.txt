@@ -1,0 +1,52 @@
+kubectl port-forward service/discovery-service --address 0.0.0.0 30006:28096 > /dev/null 2>&1 &
+kubectl port-forward service/order-service --address 0.0.0.0 30000:28090 > /dev/null 2>&1 &
+kubectl port-forward service/account-service --address 0.0.0.0 30001:28091 > /dev/null 2>&1 &
+kubectl port-forward service/customer-service --address 0.0.0.0 30002:28092 > /dev/null 2>&1 &
+kubectl port-forward service/product-service --address 0.0.0.0 30003:28093 > /dev/null 2>&1 &
+kubectl port-forward service/zipkin-service --address 0.0.0.0 30004:28094 > /dev/null 2>&1 &
+kubectl port-forward service/gateway-service --address 0.0.0.0 30005:28095 > /dev/null 2>&1 &
+
+210.90.24.172 프로젝트 서버
+host: yklee777.haenasoft.com
+id : ubuntu
+pw : yklee777!@#
+
+kubectl apply -f account-service.yaml
+kubectl apply -f order-service.yaml
+kubectl apply -f product-service.yaml
+kubectl apply -f customer-service.yaml
+kubectl apply -f gateway-service.yaml
+kubectl apply -f discovery-service.yaml
+kubectl apply -f zipkin-service.yaml
+
+kubectl delete -f account-service.yaml
+kubectl delete -f order-service.yaml
+kubectl delete -f product-service.yaml
+kubectl delete -f customer-service.yaml
+kubectl delete -f discovery-service.yaml
+kubectl delete -f gateway-service.yaml
+
+
+docker build -t yklee2002/account-service .
+docker push yklee2002/account-service
+
+docker build -t yklee2002/order-service .
+docker push yklee2002/order-service
+
+docker build -t yklee2002/product-service .
+docker push yklee2002/product-service
+
+docker build -t yklee2002/customer-service .
+docker push yklee2002/customer-service
+
+docker build -t yklee2002/gateway-service .
+docker push yklee2002/gateway-service
+
+docker build -t yklee2002/discovery-service .
+docker push yklee2002/discovery-service
+
+docker build -t yklee2002/zipkin-service .
+docker push yklee2002/zipkin-service
+
+
+

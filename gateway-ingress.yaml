@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: yklee777.haenasoft.com
+    http:
+      paths:
+      - path: /account
+        pathType: Exact
+        backend:
+          service:
+            name: account-service
+            port:
+              number: 28091
+      - path: /customer
+        pathType: Exact
+        backend:
+          service:
+            name: customer-service
+            port:
+              number: 28092
+      - path: /order
+        pathType: Exact
+        backend:
+          service:
+            name: order-service
+            port:
+              number: 28090 
+      - path: /product
+        pathType: Exact
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 28093               

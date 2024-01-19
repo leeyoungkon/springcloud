@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-service-3
+  labels:
+    app: discovery-service-3  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discovery-service-3
+  template:
+    metadata:
+      labels:
+        app: discovery-service-3
+    spec:
+      containers:
+      - name: discovery-service-3
+        image: yklee2002/sample-discovery-service:peer3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28763         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-service-3
+  labels:
+    app: discovery-service-3  
+spec:
+  ports:
+  - nodePort: 30763
+    port: 28763
+    protocol: TCP
+    targetPort: 28763
+    name: http
+  selector:
+    app: discovery-service-3
+  type: NodePort
+

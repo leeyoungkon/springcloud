@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  labels:
+    app: order-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-service
+  template:
+    metadata:
+      labels:
+        app: order-service
+    spec:
+      containers:
+      - name: order-service
+        image: yklee2002/order-service
+        env:
+        - name: EUREKA_DEFAULT_ZONE
+          value: http://210.90.24.172:30006/eureka
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28090         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  labels:
+    app: order-service  
+spec:
+  ports:
+  - nodePort: 30000
+    port: 28090
+    protocol: TCP
+    targetPort: 28090
+  selector:
+    app: order-service
+  type: NodePort
+

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: account-service
+  labels:
+    app: account-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: account-service
+  template:
+    metadata:
+      labels:
+        app: account-service
+    spec:
+      containers:
+      - name: account-service
+        image: yklee2002/account-service
+        env:
+        - name: EUREKA_DEFAULT_ZONE
+          value: http://210.90.24.172:30006/eureka
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28091         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: account-service
+  labels:
+    app: account-service  
+spec:
+  ports:
+  - nodePort: 30001
+    port: 28091
+    protocol: TCP
+    targetPort: 28091
+  selector:
+    app: account-service
+  type: NodePort
+

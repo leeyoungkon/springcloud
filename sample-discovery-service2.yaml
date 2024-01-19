@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-service-2
+  labels:
+    app: discovery-service-2  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discovery-service-2
+  template:
+    metadata:
+      labels:
+        app: discovery-service-2
+    spec:
+      containers:
+      - name: discovery-service-2
+        image: yklee2002/sample-discovery-service:peer2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28762         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-service-2
+  labels:
+    app: discovery-service-2  
+spec:
+  ports:
+  - nodePort: 30762
+    port: 28762
+    protocol: TCP
+    targetPort: 28762
+    name: http
+  selector:
+    app: discovery-service-2
+  type: NodePort
+

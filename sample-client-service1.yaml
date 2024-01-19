@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-service
+  labels:
+    app: client-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-service
+  template:
+    metadata:
+      labels:
+        app: client-service
+    spec:
+      containers:
+      - name: client-service
+        image: yklee2002/sample-client-service:zone1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 30001         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+  labels:
+    app: client-service  
+spec:
+  ports:
+  - nodePort: 30501
+    port: 30001
+    protocol: TCP
+    targetPort: 30001
+    name: http
+  selector:
+    app: client-service
+  type: NodePort
+

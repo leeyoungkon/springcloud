@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-service
+  labels:
+    app: gateway-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-service
+  template:
+    metadata:
+      labels:
+        app: gateway-service
+    spec:
+      containers:
+      - name: gateway-service
+        image: yklee2002/gateway-service
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28095         
+      imagePullSecrets:
+         - name: spring-cloud-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+  labels:
+    app: gateway-service  
+spec:
+  ports:
+  - nodePort: 30005
+    port: 28095
+    protocol: TCP
+    targetPort: 28095
+  selector:
+    app: gateway-service
+  type: NodePort
+
