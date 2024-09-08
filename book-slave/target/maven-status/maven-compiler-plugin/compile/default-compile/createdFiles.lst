@@ -1,0 +1,4 @@
+com\example\demo\db\BookRepository.class
+com\example\demo\model\Book.class
+com\example\demo\controller\BookController.class
+com\example\demo\BookMasterApplication.class
