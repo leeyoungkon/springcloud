@@ -1,0 +1,29 @@
+spring:  
+  application:
+    name: gateway-service
+
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    client: 
+      path: /client/**
+      serviceId: client-service 
+    main: 
+      path: /main/**
+      url: http://localhost:8081   
+    portInfo:
+      path: /port/**
+      serviceId: http://localhost:8082  
+ 
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+
+
+server:  
+  port: ${PORT:8765}
+
+
+      
