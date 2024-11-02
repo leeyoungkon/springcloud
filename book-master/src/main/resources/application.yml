@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: book-master    
+
+#book-slave:
+#  ribbon:
+#    eureka:
+#      enabled: false
+#    listOfServers: localhost:8091
+
+    
+server:
+  port: 28090
+  
+  
+eureka:
+  instance:
+    hostname: 133.186.135.68
+  client:
+    serviceUrl:
+      defaultZone: http://133.186.135.68:30101/eureka
+      

@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-master
+  labels:
+    app: book-master  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-master
+  template:
+    metadata:
+      labels:
+        app: book-master
+    spec:
+      containers:
+      - name: book-master
+        image: yklee2002/book-master
+        resources:
+          requests:
+            memory: "250Mi"
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28090         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-master
+  labels:
+    app: book-master  
+spec:
+  ports:
+  - nodePort: 30110
+    port: 28090
+    protocol: TCP
+    targetPort: 28090
+    name: http
+  selector:
+    app: book-master
+  type: NodePort
+
