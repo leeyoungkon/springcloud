@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-slave
+  labels:
+    app: book-slave  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-slave
+  template:
+    metadata:
+      labels:
+        app: book-slave
+    spec:
+      containers:
+      - name: book-slave
+        image: yklee2002/book-slave
+        resources:
+          requests:
+            memory: "250Mi"
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28091         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-slave
+  labels:
+    app: book-slave  
+spec:
+  ports:
+  - nodePort: 30109
+    port: 28091
+    protocol: TCP
+    targetPort: 28091
+    name: http
+  selector:
+    app: book-slave
+  type: NodePort
+
