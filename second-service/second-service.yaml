@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-service
+  labels:
+    app: second-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: second-service
+  template:
+    metadata:
+      labels:
+        app: second-service
+    spec:
+      containers:
+      - name: second-service
+        image: yklee2002/second-service
+        resources:
+          requests:
+            memory: "250Mi"
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28082         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: second-service
+  labels:
+    app: second-service  
+spec:
+  ports:
+  - nodePort: 30007
+    port: 28082
+    protocol: TCP
+    targetPort: 28082
+    name: http
+  selector:
+    app: second-service
+  type: NodePort
+

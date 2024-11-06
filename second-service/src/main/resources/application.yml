@@ -1,0 +1,44 @@
+spring:  
+  application:
+    name: second-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: username
+    password: password
+  cloud:  
+    stream:
+      bindings:
+        output:
+          destination: customer-in
+        input:
+          destination: customer-out
+      rabbit:
+        bindings:
+          output:
+            producer:
+              exchangeType: direct
+              routingKeyExpression: '"#"'
+          input:
+            consumer:
+              exchangeType: direct    
+
+    
+  zipkin:
+    base-url: http://zipkin-service  
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:  
+  port: 8082
+
+logging:
+  file: logs/order.log
+  level:
+#    com.netflix: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+  pattern:
+#    console: "%d{HH:mm:ss.SSS} %-5level %msg%n"
+    file: "%d{HH:mm:ss.SSS} %-5level %msg%n"

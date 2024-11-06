@@ -1,0 +1,12 @@
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\client\ProductClient.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\Customer.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\repository\OrderRepository.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\Product.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\OrderApplication.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\client\AccountClient.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\CustomerType.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\client\CustomerClient.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\controller\OrderController.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\Account.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\OrderStatus.java
+C:\eGovFrameDev-3.10.0-64bit\workspace\Chapter06\sample-spring-cloud-comm-feign\order-service\src\main\java\pl\piomin\services\order\model\Order.java

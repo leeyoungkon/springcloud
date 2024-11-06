@@ -1,0 +1,13 @@
+pl\piomin\services\order\model\Customer.class
+pl\piomin\services\order\repository\OrderRepository.class
+pl\piomin\services\order\model\Order.class
+pl\piomin\services\order\model\Product.class
+pl\piomin\services\order\client\AccountClient.class
+pl\piomin\services\order\model\OrderStatus.class
+pl\piomin\services\order\controller\OrderController$1.class
+pl\piomin\services\order\controller\OrderController.class
+pl\piomin\services\order\client\ProductClient.class
+pl\piomin\services\order\client\CustomerClient.class
+pl\piomin\services\order\model\Account.class
+pl\piomin\services\order\model\CustomerType.class
+pl\piomin\services\order\OrderApplication.class
