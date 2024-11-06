@@ -1,0 +1,37 @@
+spring:  
+  application:
+    name: fourth-service
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/
+#      suffix: .jsp     
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://133.186.135.68:30133/msa_board?uniCode=true&characterEncoding=UTF-8
+    username: root
+    password: password      
+# 30000 ~ 32767  쿠버 포트범위    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://133.186.135.68:30101/eureka/
+
+server:  
+  port: 28099
+#컨테이너 내부 포트
+
+
+logging:
+  file: logs/fourth.log
+  level:
+#    com.netflix: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+  pattern:
+#    console: "%d{HH:mm:ss.SSS} %-5level %msg%n"
+    file: "%d{HH:mm:ss.SSS} %-5level %msg%n"

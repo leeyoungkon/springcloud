@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: five-service
+  labels:
+    app: five-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: five-service
+  template:
+    metadata:
+      labels:
+        app: five-service
+    spec:
+      containers:
+      - name: five-service
+        image: yklee2002/five-service
+        resources:
+          requests:
+            memory: "250Mi"
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28099         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: five-service
+  labels:
+    app: five-service  
+spec:
+  ports:
+  - nodePort: 30011
+    port: 28099
+    protocol: TCP
+    targetPort: 28099
+    name: http
+  selector:
+    app: five-service
+  type: NodePort
+

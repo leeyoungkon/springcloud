@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fourth-service
+  labels:
+    app: fourth-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fourth-service
+  template:
+    metadata:
+      labels:
+        app: fourth-service
+    spec:
+      containers:
+      - name: fourth-service
+        image: yklee2002/fourth-service
+        resources:
+          requests:
+            memory: "250Mi"
+          limits:
+            memory: "500Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28099         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fourth-service
+  labels:
+    app: fourth-service  
+spec:
+  ports:
+  - nodePort: 30109
+    port: 28099
+    protocol: TCP
+    targetPort: 28099
+    name: http
+  selector:
+    app: fourth-service
+  type: NodePort
+

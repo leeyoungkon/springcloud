@@ -1,0 +1,329 @@
+00:38:14.373 INFO  No active profile set, falling back to default profiles: default
+00:38:14.399 INFO  Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:38:14 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+00:38:16.418 INFO  BeanFactory id=f42aab7a-65dc-33f6-a981-07ca4dac51f2
+00:38:16.459 INFO  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+00:38:16.627 INFO  Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$553e9f91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:16.793 INFO  Bean 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration' of type [org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration$$EnhancerBySpringCGLIB$$1a624800] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:17.096 INFO  Bean 'sleuthAdvisorConfig' of type [org.springframework.cloud.sleuth.annotation.SleuthAdvisorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:17.113 INFO  Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$17fd01ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:17.255 INFO  Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$341704cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:17.331 INFO  Bean 'org.springframework.cloud.sleuth.instrument.web.client.feign.TraceFeignClientAutoConfiguration$FeignBeanPostProcessorConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.feign.TraceFeignClientAutoConfiguration$FeignBeanPostProcessorConfiguration$$EnhancerBySpringCGLIB$$578eda94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:17.381 INFO  Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$$EnhancerBySpringCGLIB$$ffe0aded] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:38:18.380 INFO  Tomcat initialized with port(s): 28095 (http)
+00:38:18.400 INFO  Starting service [Tomcat]
+00:38:18.401 INFO  Starting Servlet Engine: Apache Tomcat/8.5.16
+00:38:19.002 INFO  At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+00:38:19.010 INFO  Initializing Spring embedded WebApplicationContext
+00:38:19.011 INFO  Root WebApplicationContext: initialization completed in 4612 ms
+00:38:19.751 INFO  Mapping filter: 'characterEncodingFilter' to: [/*]
+00:38:19.751 INFO  Mapping filter: 'traceFilter' to: [/*]
+00:38:19.751 INFO  Mapping servlet: 'dispatcherServlet' to [/]
+00:38:20.818 INFO  Building JPA container EntityManagerFactory for persistence unit 'default'
+00:38:20.833 INFO  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+00:38:20.940 INFO  HHH000412: Hibernate Core {5.0.12.Final}
+00:38:20.943 INFO  HHH000206: hibernate.properties not found
+00:38:20.944 INFO  HHH000021: Bytecode provider name : javassist
+00:38:21.102 INFO  HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+00:38:21.294 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+00:38:21.809 INFO  HHH000228: Running hbm2ddl schema update
+00:38:22.108 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+00:38:23.754 INFO  Mapped "{[/]}" onto public java.lang.String org.sample.app.controller.SampleController.home()
+00:38:23.760 INFO  Mapped "{[/mysql],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.mysqlList()
+00:38:23.762 INFO  Mapped "{[/book]}" onto public java.lang.String org.sample.app.controller.SampleController.home2()
+00:38:23.764 INFO  Mapped "{[/bookList],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.bookList()
+00:38:23.764 INFO  Mapped "{[/departList],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.departList()
+00:38:23.765 INFO  Mapped "{[/depart]}" onto public java.lang.String org.sample.app.controller.SampleController.home3()
+00:38:23.778 INFO  Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+00:38:23.780 INFO  Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+00:38:24.267 INFO  Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+00:38:24.267 INFO  Mapped URL path [/resources/css/fonts/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+00:38:24.560 INFO  Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:38:14 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+00:38:28.820 WARN  No URLs will be polled as dynamic configuration sources.
+00:38:28.821 INFO  To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+00:38:28.831 WARN  No URLs will be polled as dynamic configuration sources.
+00:38:28.831 INFO  To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+00:38:30.710 INFO  SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:38:14 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72] and template loader path [classpath:/templates/]
+00:38:30.712 INFO  ClassTemplateLoader for Spring macros added to FreeMarker configuration
+00:38:34.099 INFO  Initializing ExecutorService 
+00:38:34.451 INFO  Registering beans for JMX exposure on startup
+00:38:34.464 INFO  Bean with name 'environmentManager' has been autodetected for JMX exposure
+00:38:34.467 INFO  Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+00:38:34.471 INFO  Bean with name 'refreshScope' has been autodetected for JMX exposure
+00:38:34.474 INFO  Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+00:38:34.509 INFO  Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+00:38:34.532 INFO  Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=7e5d9a50,type=ConfigurationPropertiesRebinder]
+00:38:34.933 INFO  Starting beans in phase 0
+00:38:34.948 INFO  Setting initial instance status as: STARTING
+00:38:35.047 INFO  Initializing Eureka in region us-east-1
+00:38:36.834 INFO  Using JSON encoding codec LegacyJacksonJson
+00:38:36.835 INFO  Using JSON decoding codec LegacyJacksonJson
+00:38:37.087 INFO  Using XML encoding codec XStreamXml
+00:38:37.088 INFO  Using XML decoding codec XStreamXml
+00:38:37.494 INFO  Resolving eureka endpoints via configuration
+00:38:38.606 INFO  Disable delta property : false
+00:38:38.607 INFO  Single vip registry refresh property : null
+00:38:38.608 INFO  Force full registry fetch : false
+00:38:38.608 INFO  Application is null : false
+00:38:38.609 INFO  Registered Applications size is zero : true
+00:38:38.609 INFO  Application version is -1: true
+00:38:38.609 INFO  Getting all instance registry info from the eureka server
+00:38:39.190 INFO  The response status is 200
+00:38:39.192 INFO  Starting heartbeat executor: renew interval is: 30
+00:38:39.198 INFO  InstanceInfoReplicator onDemand update allowed rate per min is 4
+00:38:39.209 INFO  Discovery Client initialized at timestamp 1715528319208 with initial instances count: 2
+00:38:39.502 INFO  Registering application fourth-service with eureka with status UP
+00:38:39.505 INFO  Saw local status change event StatusChangeEvent [timestamp=1715528319505, current=UP, previous=STARTING]
+00:38:39.510 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095: registering service...
+00:38:39.610 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - registration status: 204
+00:38:39.671 INFO  Tomcat started on port(s): 28095 (http)
+00:38:39.674 INFO  Updating port to 28095
+00:38:39.685 INFO  Started Application in 30.641 seconds (JVM running for 34.028)
+00:38:55.929 INFO  Initializing Spring FrameworkServlet 'dispatcherServlet'
+00:38:55.930 INFO  FrameworkServlet 'dispatcherServlet': initialization started
+00:38:56.071 INFO  FrameworkServlet 'dispatcherServlet': initialization completed in 139 ms
+00:39:00.683 WARN  No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcherServlet'
+00:39:01.441 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:39:15.574 INFO  HHH000397: Using ASTQueryTranslatorFactory
+00:39:44.662 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:39:53.966 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:40:46.725 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:41:04.770 WARN  No mapping found for HTTP request with URI [/mytest] in DispatcherServlet with name 'dispatcherServlet'
+00:41:06.594 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:41:23.908 WARN  No mapping found for HTTP request with URI [/index] in DispatcherServlet with name 'dispatcherServlet'
+00:41:25.484 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:41:31.444 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:41:38.018 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:41:39.564 WARN  Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect)
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v1/spans": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:666) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.post(RestTemplateSender.java:73) ~[spring-cloud-sleuth-zipkin-1.2.5.RELEASE.jar:1.2.5.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin.RestTemplateSender.sendSpans(RestTemplateSender.java:46) ~[spring-cloud-sleuth-zipkin-1.2.5.RELEASE.jar:1.2.5.RELEASE]
+	at zipkin.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:245) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder.lambda$build$0(AsyncReporter.java:166) [zipkin-reporter-1.0.0.jar:na]
+	at zipkin.reporter.AsyncReporter$Builder$$Lambda$1.run(Unknown Source) [zipkin-reporter-1.0.0.jar:na]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_261]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[na:1.8.0_261]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_261]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_261]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.NetworkClient.doConnect(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.http.HttpClient.<init>(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.http.HttpClient.New(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.http.HttpClient.New(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source) ~[na:1.8.0_261]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source) ~[na:1.8.0_261]
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:78) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:652) ~[spring-web-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	... 8 common frames omitted
+00:43:38.617 INFO  Resolving eureka endpoints via configuration
+00:48:38.628 INFO  Resolving eureka endpoints via configuration
+00:52:48.291 INFO  No active profile set, falling back to default profiles: default
+00:52:48.317 INFO  Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:52:48 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+00:52:50.423 INFO  BeanFactory id=f42aab7a-65dc-33f6-a981-07ca4dac51f2
+00:52:50.474 INFO  JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+00:52:50.665 INFO  Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport$$EnhancerBySpringCGLIB$$553e9f91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:50.810 INFO  Bean 'org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration' of type [org.springframework.cloud.sleuth.annotation.SleuthAnnotationAutoConfiguration$$EnhancerBySpringCGLIB$$1a624800] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:51.163 INFO  Bean 'sleuthAdvisorConfig' of type [org.springframework.cloud.sleuth.annotation.SleuthAdvisorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:51.175 INFO  Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$17fd01ce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:51.277 INFO  Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$341704cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:51.333 INFO  Bean 'org.springframework.cloud.sleuth.instrument.web.client.feign.TraceFeignClientAutoConfiguration$FeignBeanPostProcessorConfiguration' of type [org.springframework.cloud.sleuth.instrument.web.client.feign.TraceFeignClientAutoConfiguration$FeignBeanPostProcessorConfiguration$$EnhancerBySpringCGLIB$$578eda94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:51.382 INFO  Bean 'org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration' of type [org.springframework.cloud.sleuth.instrument.async.AsyncDefaultAutoConfiguration$$EnhancerBySpringCGLIB$$ffe0aded] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+00:52:52.058 INFO  Tomcat initialized with port(s): 28095 (http)
+00:52:52.072 INFO  Starting service [Tomcat]
+00:52:52.074 INFO  Starting Servlet Engine: Apache Tomcat/8.5.16
+00:52:52.460 INFO  At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+00:52:52.470 INFO  Initializing Spring embedded WebApplicationContext
+00:52:52.471 INFO  Root WebApplicationContext: initialization completed in 4154 ms
+00:52:53.113 INFO  Mapping filter: 'characterEncodingFilter' to: [/*]
+00:52:53.114 INFO  Mapping filter: 'traceFilter' to: [/*]
+00:52:53.115 INFO  Mapping servlet: 'dispatcherServlet' to [/]
+00:52:54.480 INFO  Building JPA container EntityManagerFactory for persistence unit 'default'
+00:52:54.503 INFO  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+00:52:54.685 INFO  HHH000412: Hibernate Core {5.0.12.Final}
+00:52:54.688 INFO  HHH000206: hibernate.properties not found
+00:52:54.691 INFO  HHH000021: Bytecode provider name : javassist
+00:52:54.919 INFO  HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+00:52:55.122 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+00:52:55.816 INFO  HHH000228: Running hbm2ddl schema update
+00:52:56.184 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+00:52:58.223 INFO  Mapped "{[/depart]}" onto public java.lang.String org.sample.app.controller.SampleController.home3()
+00:52:58.225 INFO  Mapped "{[/bookList],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.bookList()
+00:52:58.226 INFO  Mapped "{[/mysql],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.mysqlList()
+00:52:58.227 INFO  Mapped "{[/book]}" onto public java.lang.String org.sample.app.controller.SampleController.home2()
+00:52:58.228 INFO  Mapped "{[/departList],methods=[GET],produces=[text/plain;charset=UTF-8]}" onto public java.lang.String org.sample.app.controller.SampleController.departList()
+00:52:58.228 INFO  Mapped "{[/]}" onto public java.lang.String org.sample.app.controller.SampleController.home()
+00:52:58.237 INFO  Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+00:52:58.238 INFO  Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+00:52:58.613 INFO  Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+00:52:58.614 INFO  Mapped URL path [/resources/css/fonts/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+00:52:58.912 INFO  Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:52:48 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+00:53:03.491 WARN  No URLs will be polled as dynamic configuration sources.
+00:53:03.492 INFO  To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+00:53:03.502 WARN  No URLs will be polled as dynamic configuration sources.
+00:53:03.502 INFO  To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+00:53:05.901 INFO  SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:52:48 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72] and template loader path [classpath:/templates/]
+00:53:05.905 INFO  ClassTemplateLoader for Spring macros added to FreeMarker configuration
+00:53:10.357 INFO  Initializing ExecutorService 
+00:53:10.818 INFO  Registering beans for JMX exposure on startup
+00:53:10.839 INFO  Bean with name 'environmentManager' has been autodetected for JMX exposure
+00:53:10.843 INFO  Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+00:53:10.848 INFO  Bean with name 'refreshScope' has been autodetected for JMX exposure
+00:53:10.853 INFO  Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+00:53:10.893 INFO  Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+00:53:10.920 INFO  Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=7e5d9a50,type=ConfigurationPropertiesRebinder]
+00:53:11.465 INFO  Starting beans in phase 0
+00:53:11.487 INFO  Setting initial instance status as: STARTING
+00:53:11.689 INFO  Initializing Eureka in region us-east-1
+00:53:12.577 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:53:13.948 INFO  Using JSON encoding codec LegacyJacksonJson
+00:53:13.950 INFO  Using JSON decoding codec LegacyJacksonJson
+00:53:14.288 INFO  Using XML encoding codec XStreamXml
+00:53:14.288 INFO  Using XML decoding codec XStreamXml
+00:53:14.855 INFO  Resolving eureka endpoints via configuration
+00:53:16.315 INFO  Disable delta property : false
+00:53:16.317 INFO  Single vip registry refresh property : null
+00:53:16.317 INFO  Force full registry fetch : false
+00:53:16.318 INFO  Application is null : false
+00:53:16.318 INFO  Registered Applications size is zero : true
+00:53:16.318 INFO  Application version is -1: true
+00:53:16.319 INFO  Getting all instance registry info from the eureka server
+00:53:16.750 INFO  The response status is 200
+00:53:16.757 INFO  Starting heartbeat executor: renew interval is: 30
+00:53:16.762 INFO  InstanceInfoReplicator onDemand update allowed rate per min is 4
+00:53:16.772 INFO  Discovery Client initialized at timestamp 1715529196772 with initial instances count: 3
+00:53:17.134 INFO  Registering application fourth-service with eureka with status UP
+00:53:17.135 INFO  Saw local status change event StatusChangeEvent [timestamp=1715529197135, current=UP, previous=STARTING]
+00:53:17.138 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095: registering service...
+00:53:17.226 ERROR Failed to start end point associated with ProtocolHandler ["http-nio-28095"]
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_261]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_261]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:990) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:635) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1022) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) [tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:250) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:193) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) [spring-context-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.sample.app.Application.main(Application.java:12) [classes/:na]
+00:53:17.228 ERROR Failed to start connector [Connector[HTTP/1.1-28095]]
+org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-28095]]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:250) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:193) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) [spring-context-4.3.10.RELEASE.jar:4.3.10.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.6.RELEASE.jar:1.5.6.RELEASE]
+	at org.sample.app.Application.main(Application.java:12) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1029) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	... 13 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_261]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.Net.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source) ~[na:1.8.0_261]
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source) ~[na:1.8.0_261]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:990) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:635) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1022) ~[tomcat-embed-core-8.5.16.jar:8.5.16]
+	... 14 common frames omitted
+00:53:17.230 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - registration status: 204
+00:53:17.266 INFO  Stopping service [Tomcat]
+00:53:17.287 INFO  
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+00:53:17.306 ERROR 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 28095 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 28095, or configure this application to listen on another port.
+
+00:53:17.308 INFO  Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:52:48 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+00:53:17.310 INFO  Unregistering application fourth-service with eureka with status DOWN
+00:53:17.310 WARN  Saw local status change event StatusChangeEvent [timestamp=1715529197310, current=DOWN, previous=UP]
+00:53:17.310 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095: registering service...
+00:53:17.310 INFO  Shutting down DiscoveryClient ...
+00:53:17.313 INFO  Unregistering ...
+00:53:17.330 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - deregister  status: 200
+00:53:17.348 INFO  Completed shut down of DiscoveryClient
+00:53:17.351 INFO  Stopping beans in phase 0
+00:53:17.554 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - registration status: 204
+00:53:18.360 INFO  Unregistering JMX-exposed beans on shutdown
+00:53:18.360 INFO  Unregistering JMX-exposed beans
+00:53:18.366 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
+00:53:26.500 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:53:38.631 INFO  Resolving eureka endpoints via configuration
+00:53:42.509 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:55:12.267 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:55:28.304 WARN  No mapping found for HTTP request with URI [/highLightTitle.png] in DispatcherServlet with name 'dispatcherServlet'
+00:58:38.645 INFO  Resolving eureka endpoints via configuration
+01:03:38.649 INFO  Resolving eureka endpoints via configuration
+01:08:38.654 INFO  Resolving eureka endpoints via configuration
+01:13:38.665 INFO  Resolving eureka endpoints via configuration
+01:18:38.673 INFO  Resolving eureka endpoints via configuration
+01:23:38.684 INFO  Resolving eureka endpoints via configuration
+01:26:18.781 INFO  Application shutdown requested.
+01:26:18.781 INFO  Application shutdown requested.
+01:26:18.783 INFO  Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7e5d9a50: startup date [Mon May 13 00:38:14 KST 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+01:26:18.788 INFO  Unregistering application fourth-service with eureka with status DOWN
+01:26:18.789 WARN  Saw local status change event StatusChangeEvent [timestamp=1715531178789, current=DOWN, previous=UP]
+01:26:18.790 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095: registering service...
+01:26:18.791 INFO  Shutting down DiscoveryClient ...
+01:26:18.793 INFO  Unregistering ...
+01:26:18.814 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - deregister  status: 200
+01:26:18.816 INFO  DiscoveryClient_FOURTH-SERVICE/192.168.219.105:fourth-service:28095 - registration status: 204
+01:26:18.839 INFO  Completed shut down of DiscoveryClient
+01:26:18.843 INFO  Stopping beans in phase 0
+01:26:19.858 WARN  Timed out waiting for in-flight spans to send
+01:26:19.861 INFO  Unregistering JMX-exposed beans on shutdown
+01:26:19.862 INFO  Unregistering JMX-exposed beans
+01:26:19.875 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
