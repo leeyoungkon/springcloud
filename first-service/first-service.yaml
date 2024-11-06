@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-service
+  labels:
+    app: first-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-service
+  template:
+    metadata:
+      labels:
+        app: first-service
+    spec:
+      containers:
+      - name: first-service
+        image: yklee2002/first-service
+        resources:
+          requests:
+            memory: "200Mi"
+          limits:
+            memory: "250Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28081         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-service
+  labels:
+    app: first-service  
+spec:
+  ports:
+  - nodePort: 30006
+    port: 28081
+    protocol: TCP
+    targetPort: 28081
+    name: http
+  selector:
+    app: first-service
+  type: NodePort
+

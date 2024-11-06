@@ -1,0 +1,15 @@
+spring:  
+  application:
+    name: first-service
+
+#  zipkin:
+#    base-url: http://133.186.135.68:30010/zipkin/  
+
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://133.186.135.68:30004/eureka/
+server:  
+  port: ${PORT:28081}
+  
+
