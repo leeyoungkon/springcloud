@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-service
+  labels:
+    app: discovery-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discovery-service
+  template:
+    metadata:
+      labels:
+        app: discovery-service
+    spec:
+      containers:
+      - name: discovery-service
+        image: yklee2002/discovery-service
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 28761         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: discovery-service
+  labels:
+    app: discovery-service  
+spec:
+  ports:
+  - nodePort: 30101
+    port: 28761
+    protocol: TCP
+    targetPort: 28761
+    name: http
+  selector:
+    app: discovery-service
+  type: NodePort
+

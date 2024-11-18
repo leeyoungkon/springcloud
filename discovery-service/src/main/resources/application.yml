@@ -1,0 +1,18 @@
+spring:  
+  application:
+    name: discovery-service
+
+server:  
+  port: ${PORT:28761}
+      
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+    
+logging:
+  path: /tmp/discovery/logs
+  
+
+  
