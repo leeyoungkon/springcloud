@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-service
+  labels:
+    app: gateway-service  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-service
+  template:
+    metadata:
+      labels:
+        app: gateway-service
+    spec:
+      containers:
+      - name: gateway-service
+        image: yklee2002/gateway-service
+        resources:
+          requests:
+            memory: "150Mi"
+          limits:
+            memory: "250Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 20193         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+  labels:
+    app: gateway-service  
+spec:
+  ports:
+  - nodePort: 30135
+    port: 20193
+    protocol: TCP
+    targetPort: 20193
+    name: http
+  selector:
+    app: gateway-service
+  type: NodePort
+

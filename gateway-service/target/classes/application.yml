@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: gateway-service1
+
+server:
+  port: ${PORT:20193}
+  
+#zuul:
+#  prefix: /api
+#  ignoredServices: '*'
+#  routes:
+#    first:
+#      path: /first/**
+#      url: book-master
+#    second:
+#      path: /second/**
+#      url: book-slave
+
+    
+#book-master:
+#  ribbon:
+#    listOfServers: http://localhost:8090      
+  
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://133.186.135.68:30101/eureka   
+        
+      
+zuul:
+  ignoredServices: '*'
+  routes:
+    slave:
+      path: /slave/**
+      url: http://133.186.135.68:30109
+    ui:
+      path: /ui/**
+      url: http://133.186.135.68:30119     
+  stripPrefix: false 
+   
