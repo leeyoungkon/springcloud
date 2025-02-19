@@ -1,0 +1,25 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: fourth-service
+          uri: http://fourth-service:8092
+          predicates:
+            - Path=/fourth/**
+          filters:
+            - StripPrefix=1  
+        - id: fifth-service
+          uri: http://fifth-service:8093
+          predicates:
+            - Path=/fifth/**
+          filters:
+            - StripPrefix=1   
+          
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
