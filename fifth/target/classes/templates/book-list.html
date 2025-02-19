@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book List</title>
+</head>
+<body>
+    <h2>Book List</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Published</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.published}"></td>
+            <td>
+                <a th:href="@{/books/{id}(id=${book.id})}">Edit</a>
+                <form th:action="@{/books/delete}" method="post" style="display:inline;">
+                    <input type="hidden" name="id" th:value="${book.id}"/>
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+    <h3>Add New Book</h3>
+    <form th:action="@{/books}" method="post">
+        Name: <input type="text" name="name" required/><br/>
+        Author: <input type="text" name="author" required/><br/>
+        Published: <input type="datetime-local" name="published" required/><br/>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>
