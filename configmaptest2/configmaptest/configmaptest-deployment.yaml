@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configmaptest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configmaptest
+  template:
+    metadata:
+      labels:
+        app: configmaptest
+    spec:
+      containers:
+      - name: configmaptest
+        image: yklee2002/configmaptest:latest
+        ports:
+        - containerPort: 8094
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: app.name
+        - name: APP_VERSION
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: app.version          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: configmaptest-service
+spec:
+  selector:
+    app: configmaptest
+  ports:
+  - protocol: TCP
+    port: 8094
+    targetPort: 8094
+  type: ClusterIP

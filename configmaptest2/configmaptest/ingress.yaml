@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+#  annotations:
+#    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx  # IngressClass가 올바르게 설정되었는지 확인
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: "/configmaptest/config" 
+        pathType: Prefix
+        backend:
+          service:
+            name: configmaptest-service
+            port:
+              number: 8094
+      - path: "/configmaptest/config2" 
+        pathType: Prefix
+        backend:
+          service:
+            name: configmaptest-service
+            port:
+              number: 8094              
+      - path: "/configmaptest2/config"
+        pathType: Prefix
+        backend:
+          service:
+            name: configmaptest2-service
+            port:
+              number: 8095
+      - path: "/configmaptest2/config2"
+        pathType: Prefix
+        backend:
+          service:
+            name: configmaptest2-service
+            port:
+              number: 8095
+              
