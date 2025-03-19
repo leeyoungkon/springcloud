@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream Data</title>
+</head>
+<body>
+    <h1>Live Data Stream</h1>
+    <ul id="data-list"></ul>
+
+    <script>
+        const eventSource = new EventSource("/consumer/data");
+
+        eventSource.onmessage = function(event) {
+            console.log("Received: ", event.data);
+            const li = document.createElement("li");
+            li.textContent = event.data;
+            document.getElementById("data-list").appendChild(li);
+        };
+
+        eventSource.onerror = function(error) {
+            console.error("EventSource failed:", error);
+        };
+    </script>
+</body>
+</html>
