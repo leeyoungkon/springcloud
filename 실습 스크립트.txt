@@ -1,0 +1,27 @@
+docker build -t yklee2002/second  .
+docker push yklee2002/second  
+kubectl delete -f second-deployment.yaml
+kubectl apply -f second-deployment.yaml
+kubectl get all
+
+=====================================
+mysql 확인
+kubectl get pods
+kubectl exec -it <POD_NAME> -- bash
+mysql -u root -p
+SHOW DATABASES;
+exit;
+
+kubectl port-forward service/mysql 3307:3306
+
+======================================
+인그레스 설치하기
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+kubectl get pods -n ingress-nginx
+
+kubectl describe ingress my-ingress -n default
+
+kubectl get ingressclass
+kubectl get pods -n ingress-nginx
+kubectl logs <nginx-ingress-pod-name> -n ingress-nginx
+============================================
