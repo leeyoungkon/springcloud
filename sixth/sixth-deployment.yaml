@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sixth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sixth
+  template:
+    metadata:
+      labels:
+        app: sixth
+    spec:
+      containers:
+      - name: sixth
+        image: yklee2002/sixth:latest
+        ports:
+        - containerPort: 8094
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql:3306/bookdb?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "rootpassword"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sixth-service
+spec:
+  selector:
+    app: sixth
+  ports:
+  - protocol: TCP
+    port: 8094
+    targetPort: 8094
+  type: ClusterIP
