@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: book-ui1    
+
+server:
+  port: 20192
+  
+  
+  
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+
+
+    
+logging:
+  path: /tmp/thyme/logs    
+      

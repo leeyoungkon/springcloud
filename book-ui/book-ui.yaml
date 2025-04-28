@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-ui
+  labels:
+    app: book-ui  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-ui
+  template:
+    metadata:
+      labels:
+        app: book-ui
+    spec:
+      containers:
+      - name: book-ui
+        image: yklee2002/book-ui
+        resources:
+          requests:
+            memory: "125Mi"
+          limits:
+            memory: "250Mi"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 20192         
+      imagePullSecrets:
+         - name: edu-msa-secret        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-ui
+  labels:
+    app: book-ui  
+spec:
+  ports:
+  - nodePort: 30119
+    port: 20192
+    protocol: TCP
+    targetPort: 20192
+    name: http
+  selector:
+    app: book-ui
+  type: NodePort
+

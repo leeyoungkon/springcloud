@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+body {
+	font-family: "나눔고딕", "맑은 고딕", "돋움", Dotum, Verdana, Tahoma;
+	font-size: 9pt;
+	line-height:170%
+	color: #666;
+	background-image: url(images/bg.jpg);
+	background-repeat: repeat-y;
+	background-position: 0px;
+	margin:0px;		
+	padding:0px;
+}
+
+
+img{
+	border:0px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	padding:5px 0px 5px 0px;
+	margin: 0;
+	color: #666;
+}.page_header {
+	width: 976px;
+	margin: 0px;
+	padding: 0px;
+	height: 84px;
+	width: 976px;
+	background-color: #FFF;
+}
+.page_header .toplogo {
+	margin-top: 35px;
+	margin-left: 19px;
+	float: left;
+}
+.page_header .topnav ul {
+	padding: 0px;
+	list-style-type: none;
+	margin-top: 42px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	float: right;
+}
+.page_header .topnav ul li {
+	display: block;
+	float: left;
+	margin-left: 15px;
+}
+
+
+.page_subimg{
+	clear:both;
+	width:100%;
+}
+.page_subimg .subimgline {
+	background-image: url(images/greenbar.jpg);
+	background-repeat: repeat-x;
+	height: 10px;
+}
+
+
+.page_subimg .subimg {
+	height: 183px;
+	background-image: url(images/subimg_bg.jpg);
+	background-repeat: repeat-x;
+}
+
+
+.subimg #apDivSubimg {
+	background-image: url(images/subimg.jpg);
+	height: 183px;
+	width: 1056px;
+}
+
+
+/*중앙레이아웃*/
+
+.page_content {
+	clear: both;
+	float: left;
+	width:976px;
+}
+
+.page_content:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
+
+/*왼쪽메뉴*/
+.leftmenu {
+	clear: both;
+	float: left;
+	margin-top: 22px;
+	margin-right: 67px;
+	margin-left: 34px;
+}
+.leftmenu ul {
+	padding: 0px;
+	list-style-type: none;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.leftmenu ul li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dddddd;
+	text-align: right;
+}
+.leftmenu ul li a {
+	color: #000;
+	text-decoration: none;
+	background-image: url(images/left_arrow1.jpg);
+	background-position: 125px 4px;
+	display: block;
+	background-repeat: no-repeat;
+	padding-right: 40px;
+}
+.leftmenu ul li a:hover {
+	font-weight: bold;
+	color: #5f932e;
+	background-image: url(images/left_arrow2.jpg);
+	background-repeat: no-repeat;
+	background-position: 125px 4px;
+}
+
+
+/*오른쪽 내용*/
+
+.page_content .rightcon {
+	float: left;
+	margin-top: 20px;
+	width: 720px;
+}
+
+
+#registerform {
+	border-top-width: 6px;
+	border-bottom-width: 5px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #dddddd;
+	border-bottom-color: #dddddd;
+}
+
+#registerform th {
+	height: 25px;
+	padding-top: 5px;
+	padding-left: 25px;
+	width: 100px;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dddddd;
+	background-color: #efefef;
+}
+#registerform tr td {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dddddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	text-align: left;
+}
+
+.page_content .tablestyle {
+	float: left;
+	width: 680px;
+	text-align: center;	
+	padding-top: 20px;
+	padding-bottom: 20px;	
+}
+
+#registerform tr .btnstyle {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
