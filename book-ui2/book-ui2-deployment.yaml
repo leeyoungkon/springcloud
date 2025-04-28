@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-ui2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-ui2
+  template:
+    metadata:
+      labels:
+        app: book-ui2
+    spec:
+      containers:
+      - name: book-ui2
+        image: yklee2002/book-ui2:latest
+        ports:
+        - containerPort: 8097
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-ui2-service
+spec:
+  selector:
+    app: book-ui2
+  ports:
+  - protocol: TCP
+    port: 8097
+    targetPort: 8097
+  type: NodePort
