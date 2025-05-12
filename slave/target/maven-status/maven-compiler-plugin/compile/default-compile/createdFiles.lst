@@ -1,8 +1,0 @@
-com\example\demo\service\RabbitMQConfig.class
-com\example\demo\service\BookPublisher.class
-com\example\demo\repository\BookRepository.class
-com\example\demo\entity\Book.class
-com\example\demo\SecondApplication.class
-com\example\demo\service\BookService.class
-com\example\demo\controller\BookController.class
-com\example\demo\service\BookConsumer.class
