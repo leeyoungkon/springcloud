@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText android:id="@+id/nameInput" android:hint="식당 이름" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/latitudeInput" android:hint="위도" android:inputType="numberDecimal" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/longitudeInput" android:hint="경도" android:inputType="numberDecimal" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/featuresInput" android:hint="특징" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/imageInput" android:hint="이미지 파일명 (예: rest1.png)" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/saveButton" android:text="저장하기" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
