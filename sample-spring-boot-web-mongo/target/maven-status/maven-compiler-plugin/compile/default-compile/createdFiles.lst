@@ -1,6 +1,0 @@
-pl\piomin\services\boot\controller\PersonController.class
-pl\piomin\services\boot\model\Gender.class
-pl\piomin\services\boot\model\Person.class
-pl\piomin\services\boot\Application.class
-pl\piomin\services\boot\service\PersonCounterService.class
-pl\piomin\services\boot\data\PersonRepository.class
