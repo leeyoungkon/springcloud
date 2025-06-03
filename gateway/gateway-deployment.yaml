@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-cloud-gateway
+  labels:
+    app: spring-cloud-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-cloud-gateway
+  template:
+    metadata:
+      labels:
+        app: spring-cloud-gateway
+    spec:
+      containers:
+        - name: spring-cloud-gateway
+          image: yklee2002/gateway:latest
+          ports:
+            - containerPort: 8095
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"                   
+          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-cloud-gateway
+spec:
+  type: NodePort
+  selector:
+    app: spring-cloud-gateway
+  ports:
+    - protocol: TCP
+      port: 8095
+      targetPort: 8095
+      nodePort: 30109
