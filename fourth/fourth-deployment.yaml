@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fourth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fourth
+  template:
+    metadata:
+      labels:
+        app: fourth
+    spec:
+      containers:
+      - name: fourth
+        image: yklee2002/fourth:latest
+        ports:
+        - containerPort: 8092
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql:3306/bookdb?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "rootpassword"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fourth-service
+spec:
+  selector:
+    app: fourth
+  ports:
+  - protocol: TCP
+    port: 8092
+    targetPort: 8092
+    nodePort: 30106
+  type: NodePort
