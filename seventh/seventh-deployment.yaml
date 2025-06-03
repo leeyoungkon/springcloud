@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seventh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: seventh
+  template:
+    metadata:
+      labels:
+        app: seventh
+    spec:
+      containers:
+      - name: seventh
+        image: yklee2002/seventh:latest
+        ports:
+        - containerPort: 8097
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql:3306/bookdb?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "rootpassword"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: seventh-service
+spec:
+  selector:
+    app: seventh
+  ports:
+  - protocol: TCP
+    port: 8097
+    targetPort: 8097
+    nodePort: 30110
+  type: NodePort
