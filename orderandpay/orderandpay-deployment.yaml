@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orderandpay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orderandpay
+  template:
+    metadata:
+      labels:
+        app: orderandpay
+    spec:
+      containers:
+      - name: orderandpay
+        image: yklee2002/orderandpay:latest
+        ports:
+        - containerPort: 8117
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql:3306/bookdb?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "rootpassword"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderandpay-service
+spec:
+  selector:
+    app: orderandpay
+  ports:
+  - protocol: TCP
+    port: 8117
+    targetPort: 8117
+    nodePort: 30118
+  type: NodePort
