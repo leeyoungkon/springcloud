@@ -54,8 +54,7 @@ jobs:
       # 처음 한 번은 namespace + deployment + service를 생성
       - name: Apply Kubernetes manifests (namespace + base deployment/service)
         run: |
-          kubectl apply -f k8s/namespace.yaml
-          kubectl apply -f k8s/second-deployment.yaml
+          kubectl apply -f second-deployment.yaml
 
       # 방금 빌드한 이미지(github.sha 태그)로 롤링 업데이트
       - name: Update image and rollout
