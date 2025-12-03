@@ -1,5 +1,4 @@
-# 1. OpenJDK 기반 이미지 사용
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-alpine
 
 # 2. 애플리케이션 실행 경로 설정
 WORKDIR /app

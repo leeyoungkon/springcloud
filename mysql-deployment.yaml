@@ -15,6 +15,7 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
+<<<<<<< HEAD
         resources:
           requests:
             cpu: "125m"
@@ -22,6 +23,8 @@ spec:
           limits:
             cpu: "250m"
             memory: "512Mi"   
+=======
+>>>>>>> df06be2d0fa28835604906d6e21e291b83ec76ff
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "rootpassword"
@@ -42,4 +45,14 @@ spec:
     - protocol: TCP
       port: 3306
       targetPort: 3306
+<<<<<<< HEAD
       nodePort: 30100
+=======
+      nodePort: 30100    
+
+      
+      
+      
+      
+      
+>>>>>>> df06be2d0fa28835604906d6e21e291b83ec76ff
