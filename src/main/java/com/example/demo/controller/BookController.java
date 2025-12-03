@@ -17,11 +17,7 @@ public class BookController {
         this.bookService = bookService;
     }
 
-<<<<<<< HEAD
     @GetMapping("/books")
-=======
-    @GetMapping("/book")  
->>>>>>> df06be2d0fa28835604906d6e21e291b83ec76ff
     public String getAllBooks(Model model) {
         List<Book> books = bookService.getAllBooks();
         model.addAttribute("books", books);
