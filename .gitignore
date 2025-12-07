@@ -1,0 +1,25 @@
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+### Eclipse / STS ###
+.settings/
+.classpath
+.project
+bin/
+
+### IntelliJ (혹시 열어볼 때 대비) ###
+.idea/
+*.iml
+out/
+
+### Logs ###
+logs/
+*.log
+
+### 기타 ###
+*.class

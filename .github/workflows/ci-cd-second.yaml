@@ -1,0 +1,63 @@
+name: CI/CD for second (Spring Boot on Docker Desktop Kubernetes)
+
+on:
+  push:
+    branches: [ "main" ]   # main 브랜치에 push될 때마다 배포
+
+env:
+  # Docker Hub 리포지토리: docker.io/<username>/second
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/second
+
+jobs:
+  # 1) CI: 빌드 + 도커 이미지 빌드 및 Docker Hub 푸시
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build with Maven
+        run: mvn -B clean package -DskipTests
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+
+  # 2) CD: 로컬 Docker Desktop Kubernetes에 배포
+  deploy:
+    needs: build-and-push
+    runs-on: self-hosted   # 로컬 PC에 설치한 러너에서 동작
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # 처음 한 번은 namespace + deployment + service를 생성
+      - name: Apply Kubernetes manifests (namespace + base deployment/service)
+        run: |
+          kubectl apply -f second-deployment.yaml
+
+      # 방금 빌드한 이미지(github.sha 태그)로 롤링 업데이트
+      - name: Update image and rollout
+        run: |
+          kubectl set image deployment/second second=${{ env.IMAGE_NAME }}:${{ github.sha }} 
+          kubectl rollout status deployment/second 
